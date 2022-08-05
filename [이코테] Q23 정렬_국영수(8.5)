@@ -1,0 +1,16 @@
+# 10825 국영수
+import sys
+input = sys.stdin.readline
+n = int(input())
+people = [0]*n
+for i in range(n) :
+    name, kr, eng, math = map(str,input().split())
+    kr = int(kr)
+    eng = int(eng)
+    math = int(math)
+    people[i] = [kr,eng,math,name]
+
+people_sorted = sorted(people, key = lambda x : (-x[0],x[1],-x[2],x[3]))
+
+for i in range(n) :
+    print(people_sorted[i][3])
